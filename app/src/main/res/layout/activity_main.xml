@@ -1,18 +1,1166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text_color"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.095" />
+
+    //-------------------------------------First row------------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v1"
+        app:layout_constraintStart_toEndOf="@+id/h1_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v1"
+        app:layout_constraintStart_toEndOf="@+id/h2_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v1"
+        app:layout_constraintStart_toEndOf="@+id/h3_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v1"
+        app:layout_constraintStart_toEndOf="@+id/h4_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v1"
+        app:layout_constraintStart_toEndOf="@+id/h5_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v1"
+        app:layout_constraintStart_toEndOf="@+id/h6_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v2"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v1"
+        app:layout_constraintStart_toEndOf="@+id/h7_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v1"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Second row-----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v2"
+        app:layout_constraintStart_toEndOf="@+id/h1_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v2"
+        app:layout_constraintStart_toEndOf="@+id/h2_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v2"
+        app:layout_constraintStart_toEndOf="@+id/h3_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v2"
+        app:layout_constraintStart_toEndOf="@+id/h4_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v2"
+        app:layout_constraintStart_toEndOf="@+id/h5_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v2"
+        app:layout_constraintStart_toEndOf="@+id/h6_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v3"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v2"
+        app:layout_constraintStart_toEndOf="@+id/h7_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v2"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v1"
+        tools:ignore="Autofill,LabelFor,TouchTargetSizeCheck" />
+
+    //-------------------------------------Third row-----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v3"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v3"
+        app:layout_constraintStart_toEndOf="@+id/h1_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v3"
+        app:layout_constraintStart_toEndOf="@+id/h2_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v3"
+        app:layout_constraintStart_toEndOf="@+id/h3_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v3"
+        app:layout_constraintStart_toEndOf="@+id/h4_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v3"
+        app:layout_constraintStart_toEndOf="@+id/h5_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v3"
+        app:layout_constraintStart_toEndOf="@+id/h6_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v4"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v3"
+        app:layout_constraintStart_toEndOf="@+id/h7_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v3"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Fourth row-----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v4"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v4"
+        app:layout_constraintStart_toEndOf="@+id/h1_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v4"
+        app:layout_constraintStart_toEndOf="@+id/h2_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v4"
+        app:layout_constraintStart_toEndOf="@+id/h3_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v4"
+        app:layout_constraintStart_toEndOf="@+id/h4_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v4"
+        app:layout_constraintStart_toEndOf="@+id/h5_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v4"
+        app:layout_constraintStart_toEndOf="@+id/h6_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v5"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v4"
+        app:layout_constraintStart_toEndOf="@+id/h7_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v4"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Fifth row-----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v5"
+        app:layout_constraintStart_toEndOf="@+id/h1_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v5"
+        app:layout_constraintStart_toEndOf="@+id/h2_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v5"
+        app:layout_constraintStart_toEndOf="@+id/h3_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v5"
+        app:layout_constraintStart_toEndOf="@+id/h4_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v5"
+        app:layout_constraintStart_toEndOf="@+id/h5_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v5"
+        app:layout_constraintStart_toEndOf="@+id/h6_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v6"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v5"
+        app:layout_constraintStart_toEndOf="@+id/h7_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v5"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Sixth row------------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v6"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v6"
+        app:layout_constraintStart_toEndOf="@+id/h1_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v6"
+        app:layout_constraintStart_toEndOf="@+id/h2_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v6"
+        app:layout_constraintStart_toEndOf="@+id/h3_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v6"
+        app:layout_constraintStart_toEndOf="@+id/h4_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v6"
+        app:layout_constraintStart_toEndOf="@+id/h5_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v6"
+        app:layout_constraintStart_toEndOf="@+id/h6_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v7"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v6"
+        app:layout_constraintStart_toEndOf="@+id/h7_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v6"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Seventh row----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v7"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v7"
+        app:layout_constraintStart_toEndOf="@+id/h1_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v7"
+        app:layout_constraintStart_toEndOf="@+id/h2_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v7"
+        app:layout_constraintStart_toEndOf="@+id/h3_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v7"
+        app:layout_constraintStart_toEndOf="@+id/h4_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v7"
+        app:layout_constraintStart_toEndOf="@+id/h5_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v7"
+        app:layout_constraintStart_toEndOf="@+id/h6_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v8"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v7"
+        app:layout_constraintStart_toEndOf="@+id/h7_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v7"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Eighth row-----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h1_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v8"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h2_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v8"
+        app:layout_constraintStart_toEndOf="@+id/h1_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h3_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v8"
+        app:layout_constraintStart_toEndOf="@+id/h2_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h4_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v8"
+        app:layout_constraintStart_toEndOf="@+id/h3_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h5_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v8"
+        app:layout_constraintStart_toEndOf="@+id/h4_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h6_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v8"
+        app:layout_constraintStart_toEndOf="@+id/h5_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h7_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v8"
+        app:layout_constraintStart_toEndOf="@+id/h6_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h8_v9"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v8"
+        app:layout_constraintStart_toEndOf="@+id/h7_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/h9_v9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v8"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v7"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    //-------------------------------------Nineth row-----------------------------------------------
+
+    <EditText
+        android:id="@+id/h1_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h2_v9"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h2_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h3_v9"
+        app:layout_constraintStart_toEndOf="@+id/h1_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h2_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h3_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h4_v9"
+        app:layout_constraintStart_toEndOf="@+id/h2_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h3_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h4_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h5_v9"
+        app:layout_constraintStart_toEndOf="@+id/h3_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h4_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h5_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h6_v9"
+        app:layout_constraintStart_toEndOf="@+id/h4_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h5_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h6_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h7_v9"
+        app:layout_constraintStart_toEndOf="@+id/h5_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h6_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h7_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h8_v9"
+        app:layout_constraintStart_toEndOf="@+id/h6_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h7_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h8_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/h9_v9"
+        app:layout_constraintStart_toEndOf="@+id/h7_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h8_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/h9_v9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="100dp"
+        android:ems="1"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h8_v9"
+        app:layout_constraintTop_toBottomOf="@+id/h9_v8"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="@string/computeButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
