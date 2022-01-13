@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">SudokuSolver</string>
-    <string name="computeButton">Compute</string>
+    <string name="computeButton">Solve</string>
 </resources>
