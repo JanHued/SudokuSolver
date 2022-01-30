@@ -1,4 +1,4 @@
-package com.example.sudokusolver;
+qpackage com.example.sudokusolver;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
