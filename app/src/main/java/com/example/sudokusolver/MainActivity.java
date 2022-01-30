@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("ResourceType")
     public void onClickSolve(View view) {
-        List<Integer> inputData = readInput();
+        List<Integer> grid = readInput();
+        solve(grid);
+        writeOutput(grid);
     }
 
     private List<Integer> readInput() {
@@ -40,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return inputData;
+    }
+
+    private void writeOutput(List<Integer> output) {
+        Resources r = getResources();
+        String name = getPackageName();
+        for (int y = 1; y <= 9; y++) {
+            for (int x = 1; x <= 9; x++) {
+                String id = "h" + x + "_v" + y;
+                EditText inputField = findViewById(r.getIdentifier(id, "id", name));
+            }
+        }
     }
 
     private boolean isNotANumber(String inputString) {
@@ -65,13 +78,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean possibleForSquare(List<Integer> grid, int index, int candidate) {
-        List.of(thirdRowOfIndex(index, grid));
-        return false;
+        int startRow = Math.floorDiv(getRowOfIndex(index), 3);
+        int startCol = Math.floorDiv(getColumnOfIndex(index), 3);
+        int startIndex = getIndexOfRowAndColumn(startRow, startCol);
+        return !getSublistOfSquareStartingAt(grid, startIndex).contains(candidate);
     }
 
-    private List<Integer> thirdRowOfIndex(int index, List<Integer> grid) {
-        int start = 3 * Math.floorDiv(index, 3);
-        return grid.subList(start, start + 2);
+    private int getRowOfIndex(int index) {
+        return Math.floorDiv(index, 9);
+    }
+
+    private int getColumnOfIndex(int index) {
+        return index - Math.floorDiv(index, 9) * 9;
+    }
+
+    private int getIndexOfRowAndColumn(int row, int column) {
+        return row * 9 + column;
+    }
+
+    private List<Integer> getSublistOfSquareStartingAt(List<Integer> grid, int index) {
+        List<Integer> sublistOfSquare = grid.subList(index, index + 2);
+        index += 9;
+        sublistOfSquare.addAll(grid.subList(index, index + 2));
+        index += 9;
+        sublistOfSquare.addAll(grid.subList(index, index + 2));
+        return sublistOfSquare;
     }
 
     private boolean possibleForRow(List<Integer> grid, int index, int candidate) {
