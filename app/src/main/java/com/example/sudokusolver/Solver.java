@@ -6,18 +6,22 @@ import java.util.List;
 public class Solver {
 
     protected void solve(List<Integer> grid) {
-        for (int i = 0; i < grid.size(); i++) {
-            if (grid.get(i).equals(0)) {
-                for (int candidate = 1; candidate <= 9; candidate++) {
-                    if (possible(grid, i, candidate)) {
-                        grid.set(i, candidate);
-                        solve(grid);
-                        if (!solved(grid)) {
-                            grid.set(i, 0);
+        long start = System.currentTimeMillis();
+        long end = start + 10 * 1000;
+        while (System.currentTimeMillis() < end) {
+            for (int i = 0; i < grid.size(); i++) {
+                if (grid.get(i).equals(0)) {
+                    for (int candidate = 1; candidate <= 9; candidate++) {
+                        if (possible(grid, i, candidate)) {
+                            grid.set(i, candidate);
+                            solve(grid);
+                            if (!solved(grid)) {
+                                grid.set(i, 0);
+                            }
                         }
                     }
+                    return;
                 }
-                return;
             }
         }
     }

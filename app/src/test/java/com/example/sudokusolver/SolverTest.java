@@ -1,8 +1,7 @@
 package com.example.sudokusolver;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +19,13 @@ public class SolverTest {
     public void testSolve() {
         solver.solve(testGrid);
         assertEquals(testGrid, solutionGrid);
+    }
+
+    @Test
+    public void testSolveOnImpossibleGrid() {
+        List<Integer> impossibleGrid = new ArrayList<>(testGrid);
+        impossibleGrid.stream().limit(25).forEach(entry -> entry = 1);
+        solver.solve(impossibleGrid);
     }
 
     @BeforeEach

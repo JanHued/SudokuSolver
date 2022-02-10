@@ -3,8 +3,11 @@ package com.example.sudokusolver;
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,15 +22,58 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        setTextChangedListeners();
         solver = new Solver();
+    }
+
+    private void setTextChangedListeners() {
+        Resources r = getResources();
+        String name = getPackageName();
+
+        for (int y = 1; y <= 9; y++) {
+            for (int x = 1; x <= 9; x++) {
+                String id = "h" + x + "_v" + y;
+                EditText inputField = findViewById(r.getIdentifier(id, "id", name));
+                inputField.addTextChangedListener(getTextChangeListener());
+            }
+        }
+    }
+
+    private TextWatcher getTextChangeListener() {
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                TextView text = (TextView) getCurrentFocus();
+
+                if (text != null && text.length() > 0) {
+                    View next = text.focusSearch(View.FOCUS_FORWARD); // or FOCUS_FORWARD
+                    if (next != null)
+                        next.requestFocus();
+                }
+            }
+        };
     }
 
     @SuppressLint("ResourceType")
     public void onClickSolve(View view) {
         List<Integer> grid = readInput();
         solver.solve(grid);
-        writeOutput(grid);
+        if(solved(grid)) {
+            writeOutput(grid);
+        }
+        else{
+            // Fehlerausgabe
+        }
+    }
+
+    private boolean solved(List<Integer> grid) {
+        return !grid.contains(0);
     }
 
     private List<Integer> readInput() {
@@ -48,13 +94,15 @@ public class MainActivity extends AppCompatActivity {
         return inputData;
     }
 
-    private void writeOutput(List<Integer> output) {
+    private void writeOutput(List<Integer> outputGrid) {
         Resources r = getResources();
         String name = getPackageName();
+        EditText outputField;
         for (int y = 1; y <= 9; y++) {
             for (int x = 1; x <= 9; x++) {
                 String id = "h" + x + "_v" + y;
-                EditText inputField = findViewById(r.getIdentifier(id, "id", name));
+                outputField = findViewById(r.getIdentifier(id, "id", name));
+                outputField.setText(String.valueOf(outputGrid.get((y - 1) * 9 + x - 1)), TextView.BufferType.NORMAL);
             }
         }
     }
