@@ -66,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
+    public void onClickRefresh(View view){
+        finish();
+        startActivity(getIntent());
+    }
+
     @SuppressLint("ResourceType")
     public void onClickSolve(View view) throws InterruptedException {
         List<Integer> grid = readInput();
@@ -124,5 +129,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickRetry(View view) {
         setContentView(R.layout.activity_main);
+        onAppStart();
     }
 }
