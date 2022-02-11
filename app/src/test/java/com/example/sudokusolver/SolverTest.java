@@ -27,7 +27,7 @@ public class SolverTest {
     @Disabled
     public void testSolveOnImpossibleGrid() {
         List<Integer> impossibleGrid = new ArrayList<>(testGrid);
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 9; i++) {
             impossibleGrid.set(i,1);
         }
         solver.solve(impossibleGrid);

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             solver.solve(grid);
         }).start();
         long start = System.currentTimeMillis();
-        long end = start + 10000;
+        long end = start + 5000;
         while (System.currentTimeMillis() < end) {
             if (solved(grid)) {
                 writeOutput(grid);
