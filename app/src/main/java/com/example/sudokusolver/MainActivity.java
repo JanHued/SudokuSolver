@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        onAppStart();
+    }
+
+    private void onAppStart() {
         setContentView(R.layout.activity_main);
         setTextChangedListeners();
         solver = new Solver();
@@ -44,9 +48,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
+
             @Override
             public void afterTextChanged(Editable editable) {
             }
+
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 TextView text = (TextView) getCurrentFocus();
@@ -61,15 +67,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ResourceType")
-    public void onClickSolve(View view) {
+    public void onClickSolve(View view) throws InterruptedException {
         List<Integer> grid = readInput();
-        solver.solve(grid);
-        if(solved(grid)) {
-            writeOutput(grid);
+        new Thread(() -> {
+            solver.solve(grid);
+        }).start();
+        long start = System.currentTimeMillis();
+        long end = start + 10000;
+        while (System.currentTimeMillis() < end) {
+            if (solved(grid)) {
+                writeOutput(grid);
+                return;
+            }
         }
-        else{
-            // Fehlerausgabe
-        }
+        setContentView(R.layout.activity_timeout);
     }
 
     private boolean solved(List<Integer> grid) {
@@ -109,5 +120,9 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isNotANumber(String inputString) {
         return !List.of("0", "1", "2", "3", "4", "5", "6", "7", "8", "9").contains(inputString);
+    }
+
+    public void onClickRetry(View view) {
+        setContentView(R.layout.activity_main);
     }
 }

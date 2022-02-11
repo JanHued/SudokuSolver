@@ -2,7 +2,9 @@ package com.example.sudokusolver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -22,9 +24,12 @@ public class SolverTest {
     }
 
     @Test
+    @Disabled
     public void testSolveOnImpossibleGrid() {
         List<Integer> impossibleGrid = new ArrayList<>(testGrid);
-        impossibleGrid.stream().limit(25).forEach(entry -> entry = 1);
+        for (int i = 0; i < 25; i++) {
+            impossibleGrid.set(i,1);
+        }
         solver.solve(impossibleGrid);
     }
 
