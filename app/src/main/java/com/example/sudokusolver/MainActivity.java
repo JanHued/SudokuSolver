@@ -72,16 +72,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ResourceType")
-    public void onClickSolve(View view) throws InterruptedException {
-        List<Integer> grid = readInput();
-        if (solver.isValid(grid)) {
-            new Thread(() -> {
-                solver.solve(grid);
-            }).start();
+    public void onClickSolve(View view) {
+        Grid grid = new Grid(readInput());
+        if (grid.isValid()) {
+            new Thread(() -> solver.solve(grid)).start();
+
             long start = System.currentTimeMillis();
             long end = start + 5000;
+
             while (System.currentTimeMillis() < end) {
-                if (isFinished(grid)) {
+                if (grid.isFinished()) {
                     writeOutput(grid);
                     return;
                 }
@@ -108,11 +108,7 @@ public class MainActivity extends AppCompatActivity {
         return inputData;
     }
 
-    private boolean isFinished(List<Integer> grid) {
-        return !grid.contains(0);
-    }
-
-    private void writeOutput(List<Integer> outputGrid) {
+    private void writeOutput(Grid grid) {
         Resources r = getResources();
         String name = getPackageName();
         EditText outputField;
@@ -120,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             for (int x = 1; x <= 9; x++) {
                 String id = "h" + x + "_v" + y;
                 outputField = findViewById(r.getIdentifier(id, "id", name));
-                outputField.setText(String.valueOf(outputGrid.get((y - 1) * 9 + x - 1)), TextView.BufferType.NORMAL);
+                outputField.setText(String.valueOf(grid.get((y - 1) * 9 + x - 1)), TextView.BufferType.NORMAL);
             }
         }
     }
