@@ -99,26 +99,6 @@ public class Solver {
         return toBeChecked.stream().noneMatch(this::hasDuplicates);
     }
 
-
-    protected boolean _isValid(List<Integer> grid) {
-        boolean rowsHaveDuplicates = false;
-        boolean colsHaveDuplicates = false;
-        AtomicBoolean squaresHaveDuplicates = new AtomicBoolean(false);
-        List<Integer> testList;
-        for (int i = 0; i < 9; i++) {
-            rowsHaveDuplicates = hasDuplicates(grid.subList(9 * i, 9 * i + 9));
-            colsHaveDuplicates = hasDuplicates(getVerticalRow(grid, i));
-            if (colsHaveDuplicates || rowsHaveDuplicates) break;
-        }
-        List<Integer> squareStarts = List.of(0, 3, 6, 27, 30, 33, 54, 57, 60);
-        squareStarts.stream().map(ss -> getSublistOfSquareStartingAt(grid, ss))
-                .forEach(square -> {
-                    if (hasDuplicates(square))
-                        squaresHaveDuplicates.set(true);
-                });
-        return !rowsHaveDuplicates && !colsHaveDuplicates && !squaresHaveDuplicates.get();
-    }
-
     private boolean hasDuplicates(List<Integer> checkList) {
         List<Integer> testList = checkList.stream().filter(i -> !i.equals(0)).collect(Collectors.toList());
         Set<Integer> testSet = new HashSet<>(testList);
