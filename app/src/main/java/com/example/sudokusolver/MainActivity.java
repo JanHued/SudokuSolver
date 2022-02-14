@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    public void onClickRefresh(View view){
+    public void onClickRefresh(View view) {
         finish();
         startActivity(getIntent());
     }
@@ -74,22 +74,20 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("ResourceType")
     public void onClickSolve(View view) throws InterruptedException {
         List<Integer> grid = readInput();
-        new Thread(() -> {
-            solver.solve(grid);
-        }).start();
-        long start = System.currentTimeMillis();
-        long end = start + 5000;
-        while (System.currentTimeMillis() < end) {
-            if (solved(grid)) {
-                writeOutput(grid);
-                return;
+        if (solver.isValid(grid)) {
+            new Thread(() -> {
+                solver.solve(grid);
+            }).start();
+            long start = System.currentTimeMillis();
+            long end = start + 5000;
+            while (System.currentTimeMillis() < end) {
+                if (isFinished(grid)) {
+                    writeOutput(grid);
+                    return;
+                }
             }
         }
         setContentView(R.layout.activity_timeout);
-    }
-
-    private boolean solved(List<Integer> grid) {
-        return !grid.contains(0);
     }
 
     private List<Integer> readInput() {
@@ -108,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return inputData;
+    }
+
+    private boolean isFinished(List<Integer> grid) {
+        return !grid.contains(0);
     }
 
     private void writeOutput(List<Integer> outputGrid) {

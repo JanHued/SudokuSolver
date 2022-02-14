@@ -1,7 +1,11 @@
 package com.example.sudokusolver;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 public class Solver {
 
@@ -46,7 +50,7 @@ public class Solver {
 
     private List<Integer> getVerticalRow(List<Integer> grid, int start) {
         List<Integer> verticalRow = new ArrayList<>(grid.get(start));
-        for (int i = start + 9; i < grid.size(); i += 9) {
+        for (int i = start; i < grid.size(); i += 9) {
             verticalRow.add(grid.get(i));
         }
         return verticalRow;
@@ -78,5 +82,30 @@ public class Solver {
         index += 9;
         sublistOfSquare.addAll(grid.subList(index, index + 3));
         return sublistOfSquare;
+    }
+
+    protected boolean isValid(List<Integer> grid) {
+        boolean rowsHaveDuplicates = false;
+        boolean colsHaveDuplicates = false;
+        AtomicBoolean squaresHaveDuplicates = new AtomicBoolean(false);
+        List<Integer> testList;
+        for (int i = 0; i < 9; i++) {
+            rowsHaveDuplicates = hasDuplicates(grid.subList(9 * i, 9 * i + 9));
+            colsHaveDuplicates = hasDuplicates(getVerticalRow(grid, i));
+            if (colsHaveDuplicates || rowsHaveDuplicates) break;
+        }
+        List<Integer> squareStarts = List.of(0, 3, 6, 27, 30, 33, 54, 57, 60);
+        squareStarts.stream().map(ss -> getSublistOfSquareStartingAt(grid, ss))
+                .forEach(square -> {
+                    if (hasDuplicates(square))
+                        squaresHaveDuplicates.set(true);
+                });
+        return !rowsHaveDuplicates && !colsHaveDuplicates && !squaresHaveDuplicates.get();
+    }
+
+    private boolean hasDuplicates(List<Integer> checkList) {
+        List<Integer> testList = checkList.stream().filter(i -> !i.equals(0)).collect(Collectors.toList());
+        Set<Integer> testSet = new HashSet<>(testList);
+        return testList.size() > testSet.size();
     }
 }
