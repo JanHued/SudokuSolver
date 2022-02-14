@@ -85,6 +85,22 @@ public class Solver {
     }
 
     protected boolean isValid(List<Integer> grid) {
+        // All sublists to be checked for duplicates
+        List<List<Integer>> toBeChecked = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            // Add rows
+            toBeChecked.add(grid.subList(9 * i, 9 * i + 9));
+            // Add columns
+            toBeChecked.add(getVerticalRow(grid, i));
+        }
+        List<Integer> squareStarts = List.of(0, 3, 6, 27, 30, 33, 54, 57, 60);
+        // Add squares
+        squareStarts.stream().map(ss -> getSublistOfSquareStartingAt(grid, ss)).forEach(toBeChecked::add);
+        return toBeChecked.stream().noneMatch(this::hasDuplicates);
+    }
+
+
+    protected boolean _isValid(List<Integer> grid) {
         boolean rowsHaveDuplicates = false;
         boolean colsHaveDuplicates = false;
         AtomicBoolean squaresHaveDuplicates = new AtomicBoolean(false);
